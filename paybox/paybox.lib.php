@@ -78,7 +78,9 @@ function print_paybox_redirect($PRICE,$CURRENCY,$EMAIL,$urlok,$urlko,$TAG)
 	if ($conf->global->PAYBOX_IBS_SITE) $IBS_SITE=$conf->global->PAYBOX_IBS_SITE;
 	$IBS_RANG="99";         # Rang test
 	if ($conf->global->PAYBOX_IBS_RANG) $IBS_RANG=$conf->global->PAYBOX_IBS_RANG;
-	$IBS_DEVISE="840";			# Currency (Dollar US by default)
+	$IBS_DEVISE="840";	# Currency (Dollar US by default)
+	if ($conf->global->PAYBOX_IBS_HMAC) $IBS_RANG=$conf->global->PAYBOX_IBS_HMAC;
+	$IBS_HMAC="0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF";	# HMAC Sceret Key (by default)	
 	if ($CURRENCY == 'EUR') $IBS_DEVISE="978";
 	if ($CURRENCY == 'USD') $IBS_DEVISE="840";
 
